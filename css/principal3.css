@@ -1,0 +1,232 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body,
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  font-family: sans-serif;
+}
+
+a:hover {
+  background: rgb(52, 84, 172);
+  border-radius: 4px;
+}
+
+#logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#header {
+  box-sizing: border-box;
+  height: 70px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(rgb(30, 49, 175), rgb(4, 14, 88));
+  margin-bottom: auto;
+}
+
+#menu {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+}
+
+#menu a {
+  display: block;
+  padding: 0.5rem;
+}
+
+#btn-mobile {
+  display: none;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  #menu {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 70px;
+    right: 0px;
+    background: linear-gradient(rgb(30, 49, 175), rgb(4, 14, 88));
+    transition: 0.6s;
+    z-index: 1000;
+    height: 0px;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+  #nav.active #menu {
+    height: calc(100vh - 70px);
+    visibility: visible;
+    overflow-y: auto;
+  }
+  #menu a {
+    padding: 1rem 0;
+    margin: 0 1rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.05);
+  }
+  #btn-mobile {
+    display: flex;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    cursor: pointer;
+    gap: 0.5rem;
+  }
+  #hamburger {
+    border-top: 2px solid;
+    width: 20px;
+  }
+  #hamburger::after,
+  #hamburger::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+  }
+  #nav.active #hamburger {
+    border-top-color: transparent;
+  }
+  #nav.active #hamburger::before {
+    transform: rotate(135deg);
+  }
+  #nav.active #hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+}
+
+/*
+Cards ========================================================================
+*/
+
+body {
+    background: linear-gradient(rgb(0, 8, 24), rgb(2, 7, 54));
+    height: 100vh;
+    width: 100%;
+
+    justify-content: center;
+    align-items: center;
+
+    color: #434343;
+
+    font-size: 16px;
+}
+
+main.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25vh;
+    padding: 32px;
+}
+
+main.cards section.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    background: linear-gradient(rgb(30, 49, 175), rgb(4, 14, 88));
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    max-height: 468px;
+    margin-left: 32px;
+    cursor: pointer;
+}
+
+main.cards section.card:first-child {
+    margin-left: 0;
+}
+
+main.cards section.card .icon {
+    width: 64px;
+    height: 64px;
+}
+
+main.cards section.card img {
+    width: 100%;
+}
+
+main.cards section.card h3 {
+    font-size: 100%;
+    margin: 16px 0;
+}
+
+main.cards section.card span {
+    font-weight: 300;
+    max-width: 240px;
+    font-size: 80%;
+    margin-bottom: 16px;
+}
+
+main.cards section.card button {
+    padding: 0.5rem 1rem;
+    text-transform: uppercase;
+    border-radius: 32px;
+    border: 0;
+    cursor: pointer;
+    font-size: 80%;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 16px 0;
+}
+
+main.cards section.card.contact button {
+    background: linear-gradient(to right, #3e51ff, #a6a7a8);
+}
+main.cards section.card.shop button {
+    background: linear-gradient(to right, #3e51ff, #a6a7a8);
+}
+main.cards section.card.about button {
+    background: linear-gradient(to right, #3e51ff, #a6a7a8);
+}
+
+main.cards section.card.contact {
+    box-shadow: 20px 20px 50px -30px #0d10af;
+}
+main.cards section.card.shop {
+    box-shadow: 20px 20px 50px -30px #0d10af;
+}
+main.cards section.card.about {
+    box-shadow: 20px 20px 50px -30px #0d10af;
+}
+
+@media screen and (max-width: 720px) {
+    main.cards {
+        flex-direction: column;
+        height: auto;
+    }
+
+    main.cards section.card {
+        margin-left: 0;
+        margin-bottom: 32px;
+    }
+
+    main.cards section.card:last-child {
+        margin-bottom: 0;
+    }
+
+    main.cards section.card button {
+        font-size: 70%;
+    }
+
+}
